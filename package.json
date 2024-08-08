@@ -1,0 +1,17 @@
+{
+  "name": "drmwasm",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "drmwasm_bg.wasm",
+    "drmwasm.js",
+    "drmwasm_bg.js",
+    "drmwasm.d.ts"
+  ],
+  "main": "drmwasm.js",
+  "types": "drmwasm.d.ts",
+  "sideEffects": [
+    "./drmwasm.js",
+    "./snippets/*"
+  ]
+}
