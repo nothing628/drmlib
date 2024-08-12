@@ -80,14 +80,17 @@ function getInt32Memory0() {
 }
 /**
 * @param {Uint8Array} inp_bytes
+* @param {Uint8Array} enc_key
 * @returns {any}
 */
-export function get_replacement_jpeg(inp_bytes) {
+export function get_replacement_jpeg(inp_bytes, enc_key) {
     try {
         const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
         const ptr0 = passArray8ToWasm0(inp_bytes, wasm.__wbindgen_malloc);
         const len0 = WASM_VECTOR_LEN;
-        wasm.get_replacement_jpeg(retptr, ptr0, len0);
+        const ptr1 = passArray8ToWasm0(enc_key, wasm.__wbindgen_malloc);
+        const len1 = WASM_VECTOR_LEN;
+        wasm.get_replacement_jpeg(retptr, ptr0, len0, ptr1, len1);
         var r0 = getInt32Memory0()[retptr / 4 + 0];
         var r1 = getInt32Memory0()[retptr / 4 + 1];
         var r2 = getInt32Memory0()[retptr / 4 + 2];
@@ -102,14 +105,17 @@ export function get_replacement_jpeg(inp_bytes) {
 
 /**
 * @param {Uint8Array} inp_bytes
+* @param {Uint8Array} enc_key
 * @returns {any}
 */
-export function get_replacement_webp(inp_bytes) {
+export function get_replacement_webp(inp_bytes, enc_key) {
     try {
         const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
         const ptr0 = passArray8ToWasm0(inp_bytes, wasm.__wbindgen_malloc);
         const len0 = WASM_VECTOR_LEN;
-        wasm.get_replacement_webp(retptr, ptr0, len0);
+        const ptr1 = passArray8ToWasm0(enc_key, wasm.__wbindgen_malloc);
+        const len1 = WASM_VECTOR_LEN;
+        wasm.get_replacement_webp(retptr, ptr0, len0, ptr1, len1);
         var r0 = getInt32Memory0()[retptr / 4 + 0];
         var r1 = getInt32Memory0()[retptr / 4 + 1];
         var r2 = getInt32Memory0()[retptr / 4 + 2];
