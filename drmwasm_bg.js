@@ -102,21 +102,16 @@ export function render_webp(inp_bytes, enc_key, uid) {
 export function __wbg___wbindgen_throw_be289d5034ed271b(arg0, arg1) {
     throw new Error(getStringFromWasm0(arg0, arg1));
 }
-export function __wbg_new_3eb36ae241fe6f44() {
-    const ret = new Array();
-    return ret;
-}
-export function __wbg_set_f43e577aea94465b(arg0, arg1, arg2) {
-    arg0[arg1 >>> 0] = arg2;
-}
-export function __wbindgen_cast_0000000000000001(arg0) {
-    // Cast intrinsic for `F64 -> Externref`.
-    const ret = arg0;
+export function __wbindgen_cast_0000000000000001(arg0, arg1) {
+    // Cast intrinsic for `Ref(String) -> Externref`.
+    const ret = getStringFromWasm0(arg0, arg1);
     return ret;
 }
 export function __wbindgen_cast_0000000000000002(arg0, arg1) {
-    // Cast intrinsic for `Ref(String) -> Externref`.
-    const ret = getStringFromWasm0(arg0, arg1);
+    var v0 = getArrayU8FromWasm0(arg0, arg1).slice();
+    wasm.__wbindgen_free(arg0, arg1 * 1, 1);
+    // Cast intrinsic for `Vector(U8) -> Externref`.
+    const ret = v0;
     return ret;
 }
 export function __wbindgen_init_externref_table() {
@@ -131,6 +126,11 @@ export function __wbindgen_init_externref_table() {
 const ReplacementImageFinalization = (typeof FinalizationRegistry === 'undefined')
     ? { register: () => {}, unregister: () => {} }
     : new FinalizationRegistry(ptr => wasm.__wbg_replacementimage_free(ptr >>> 0, 1));
+
+function getArrayU8FromWasm0(ptr, len) {
+    ptr = ptr >>> 0;
+    return getUint8ArrayMemory0().subarray(ptr / 1, ptr / 1 + len);
+}
 
 function getStringFromWasm0(ptr, len) {
     ptr = ptr >>> 0;
