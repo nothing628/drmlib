@@ -67,6 +67,40 @@ if (Symbol.dispose) ReplacementImage.prototype[Symbol.dispose] = ReplacementImag
 /**
  * @param {Uint8Array} inp_bytes
  * @param {Uint8Array} enc_key
+ * @returns {any}
+ */
+export function get_replacement_jpeg(inp_bytes, enc_key) {
+    const ptr0 = passArray8ToWasm0(inp_bytes, wasm.__wbindgen_malloc);
+    const len0 = WASM_VECTOR_LEN;
+    const ptr1 = passArray8ToWasm0(enc_key, wasm.__wbindgen_malloc);
+    const len1 = WASM_VECTOR_LEN;
+    const ret = wasm.get_replacement_jpeg(ptr0, len0, ptr1, len1);
+    if (ret[2]) {
+        throw takeFromExternrefTable0(ret[1]);
+    }
+    return takeFromExternrefTable0(ret[0]);
+}
+
+/**
+ * @param {Uint8Array} inp_bytes
+ * @param {Uint8Array} enc_key
+ * @returns {any}
+ */
+export function get_replacement_webp(inp_bytes, enc_key) {
+    const ptr0 = passArray8ToWasm0(inp_bytes, wasm.__wbindgen_malloc);
+    const len0 = WASM_VECTOR_LEN;
+    const ptr1 = passArray8ToWasm0(enc_key, wasm.__wbindgen_malloc);
+    const len1 = WASM_VECTOR_LEN;
+    const ret = wasm.get_replacement_webp(ptr0, len0, ptr1, len1);
+    if (ret[2]) {
+        throw takeFromExternrefTable0(ret[1]);
+    }
+    return takeFromExternrefTable0(ret[0]);
+}
+
+/**
+ * @param {Uint8Array} inp_bytes
+ * @param {Uint8Array} enc_key
  * @param {number} uid
  * @param {number} time
  * @returns {any}
@@ -104,12 +138,31 @@ export function render_webp(inp_bytes, enc_key, uid, time) {
 export function __wbg___wbindgen_throw_be289d5034ed271b(arg0, arg1) {
     throw new Error(getStringFromWasm0(arg0, arg1));
 }
-export function __wbindgen_cast_0000000000000001(arg0, arg1) {
+export function __wbg_new_361308b2356cecd0() {
+    const ret = new Object();
+    return ret;
+}
+export function __wbg_new_3eb36ae241fe6f44() {
+    const ret = new Array();
+    return ret;
+}
+export function __wbg_set_3f1d0b984ed272ed(arg0, arg1, arg2) {
+    arg0[arg1] = arg2;
+}
+export function __wbg_set_f43e577aea94465b(arg0, arg1, arg2) {
+    arg0[arg1 >>> 0] = arg2;
+}
+export function __wbindgen_cast_0000000000000001(arg0) {
+    // Cast intrinsic for `F64 -> Externref`.
+    const ret = arg0;
+    return ret;
+}
+export function __wbindgen_cast_0000000000000002(arg0, arg1) {
     // Cast intrinsic for `Ref(String) -> Externref`.
     const ret = getStringFromWasm0(arg0, arg1);
     return ret;
 }
-export function __wbindgen_cast_0000000000000002(arg0, arg1) {
+export function __wbindgen_cast_0000000000000003(arg0, arg1) {
     var v0 = getArrayU8FromWasm0(arg0, arg1).slice();
     wasm.__wbindgen_free(arg0, arg1 * 1, 1);
     // Cast intrinsic for `Vector(U8) -> Externref`.
