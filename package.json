@@ -2,7 +2,7 @@
   "name": "drmwasm",
   "type": "module",
   "description": "Subproject for running DRM on browser",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "files": [
     "drmwasm_bg.wasm",
     "drmwasm.js",
