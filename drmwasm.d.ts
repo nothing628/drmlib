@@ -11,6 +11,6 @@ export class ReplacementImage {
     y: number;
 }
 
-export function render_jpeg(inp_bytes: Uint8Array, enc_key: Uint8Array, uid: number): any;
+export function render_jpeg(inp_bytes: Uint8Array, enc_key: Uint8Array, uid: number, time: number): any;
 
-export function render_webp(inp_bytes: Uint8Array, enc_key: Uint8Array, uid: number): any;
+export function render_webp(inp_bytes: Uint8Array, enc_key: Uint8Array, uid: number, time: number): any;

@@ -68,14 +68,15 @@ if (Symbol.dispose) ReplacementImage.prototype[Symbol.dispose] = ReplacementImag
  * @param {Uint8Array} inp_bytes
  * @param {Uint8Array} enc_key
  * @param {number} uid
+ * @param {number} time
  * @returns {any}
  */
-export function render_jpeg(inp_bytes, enc_key, uid) {
+export function render_jpeg(inp_bytes, enc_key, uid, time) {
     const ptr0 = passArray8ToWasm0(inp_bytes, wasm.__wbindgen_malloc);
     const len0 = WASM_VECTOR_LEN;
     const ptr1 = passArray8ToWasm0(enc_key, wasm.__wbindgen_malloc);
     const len1 = WASM_VECTOR_LEN;
-    const ret = wasm.render_jpeg(ptr0, len0, ptr1, len1, uid);
+    const ret = wasm.render_jpeg(ptr0, len0, ptr1, len1, uid, time);
     if (ret[2]) {
         throw takeFromExternrefTable0(ret[1]);
     }
@@ -86,14 +87,15 @@ export function render_jpeg(inp_bytes, enc_key, uid) {
  * @param {Uint8Array} inp_bytes
  * @param {Uint8Array} enc_key
  * @param {number} uid
+ * @param {number} time
  * @returns {any}
  */
-export function render_webp(inp_bytes, enc_key, uid) {
+export function render_webp(inp_bytes, enc_key, uid, time) {
     const ptr0 = passArray8ToWasm0(inp_bytes, wasm.__wbindgen_malloc);
     const len0 = WASM_VECTOR_LEN;
     const ptr1 = passArray8ToWasm0(enc_key, wasm.__wbindgen_malloc);
     const len1 = WASM_VECTOR_LEN;
-    const ret = wasm.render_webp(ptr0, len0, ptr1, len1, uid);
+    const ret = wasm.render_webp(ptr0, len0, ptr1, len1, uid, time);
     if (ret[2]) {
         throw takeFromExternrefTable0(ret[1]);
     }
